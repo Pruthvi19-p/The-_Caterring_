@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CATERING</title>
+    <link rel="stylesheet" href="./caterring.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href=".\index.html#home" style="text-decoration: none; color:white;">
+                 The CATERING </a></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li>
+                    <button class="cart-toggle-btn" onclick="toggleCart(true)">
+                        Cart <span id="cart-count" class="cart-count">0</span>
+                    </button>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Delicious Food, Unforgettable Experiences</h1>
+            <p style="font-family:cooper; font-size:35px;">Premium catering services for all occasions</p>
+            <a href="#menu" class="btn">View Menu</a>
+        </div>
+        <div class="hero-image">
+            <img class="img" src="./img/diamond-package-500x500.webp" alt="Catering Package">
+        </div>
+    </section><br><br><br><br>
+
+    
+    <section id="services">
+        <h2 style="margin: 100px;">Our Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <h3>Weddings</h3>
+                <p>Make your special day memorable with exquisite catering.</p>
+            </div>
+            <div class="service-box">
+                <h3>Corporate Events</h3>
+                <p>Professional catering for business meetings & conferences.</p>
+            </div>
+            <div class="service-box">
+                <h3>Private Parties</h3>
+                <p>Enjoy delicious meals at your personal events.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="menu">
+        <h2 style="margin: 60px;">Our Menu</h2>
+        <h3 class="menu-heading">Starters</h3>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Starter Name</th>
+                    <th>Dishes in Plate</th>
+                    <th>Price (Rs)</th>
+                    <th>Quantity</th>
+                    <th>Select</th>
+                </tr>
+                <tr>
+                    <td>Masala Papad</td>
+                    <td>Roasted / Oil fry</td>
+                    <td>90</td>
+                    <td><input type="number" id="starter-qty1" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Masala Papad', 90, 'starter-qty1')">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Paneer Tikka</td>
+                    <td>Marinated paneer with veggies</td>
+                    <td>150</td>
+                    <td><input type="number" id="starter-qty2" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Paneer Tikka', 150, 'starter-qty2')">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Hara Bhara Kebab</td>
+                    <td>Spinach & peas patties</td>
+                    <td>120</td>
+                    <td><input type="number" id="starter-qty3" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Hara Bhara Kebab', 120, 'starter-qty3')">Add to Cart</button></td>
+                </tr>
+            </table>
+        </div>
+
+        
+        <h3 class="menu-heading">Main Course</h3>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Food Name</th>
+                    <th>Dishes in Plate</th>
+                    <th>Price (Rs)</th>
+                    <th>Quantity</th>
+                    <th>Select</th>
+                </tr>
+                <tr>
+                    <td>Veg Thali</td>
+                    <td>Dal, mix veg, rice, roti</td>
+                    <td>200</td>
+                    <td><input type="number" id="main-qty1" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Veg Thali', 200, 'main-qty1')">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Paneer Butter Masala</td>
+                    <td>Served with 2 butter naan</td>
+                    <td>250</td>
+                    <td><input type="number" id="main-qty2" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Paneer Butter Masala', 250, 'main-qty2')">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Veg Biryani</td>
+                    <td>Served with raita</td>
+                    <td>220</td>
+                    <td><input type="number" id="main-qty3" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Veg Biryani', 220, 'main-qty3')">Add to Cart</button></td>
+                </tr>
+            </table>
+        </div>
+
+        
+        <h3 class="menu-heading">Desserts</h3>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Dessert Name</th>
+                    <th>Details</th>
+                    <th>Price (Rs)</th>
+                    <th>Quantity</th>
+                    <th>Select</th>
+                </tr>
+                <tr>
+                    <td>Gulab Jamun</td>
+                    <td>2 pcs per plate</td>
+                    <td>90</td>
+                    <td><input type="number" id="dessert-qty1" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Gulab Jamun', 90, 'dessert-qty1')">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Rasmalai</td>
+                    <td>2 pcs per plate</td>
+                    <td>120</td>
+                    <td><input type="number" id="dessert-qty2" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Rasmalai', 120, 'dessert-qty2')">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Ice Cream</td>
+                    <td>Vanilla / Chocolate scoop</td>
+                    <td>80</td>
+                    <td><input type="number" id="dessert-qty3" min="1" value="1"></td>
+                    <td><button class="btn" onclick="addToCart('Ice Cream', 80, 'dessert-qty3')">Add to Cart</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Your Address" required>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+   
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart(false)"></div>
+
+    <aside id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="cart-close" onclick="toggleCart(false)">✕</button>
+        </div>
+        <ul id="cart-items" class="cart-items"></ul>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Total: Rs <span id="total-price">0</span>
+            </div>
+            <button class="btn" onclick="placeOrder()">Place Order</button>
+        </div>
+    </aside>
+
+    <footer>
+        <p>2025 The Catering. All rights reserved.</p>
+    </footer>
+
+    <script src="./cart.js"></script>
+</body>
+</html>
